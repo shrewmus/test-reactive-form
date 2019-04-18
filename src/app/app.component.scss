@@ -28,7 +28,7 @@ $color_invalid_alert: #ff4a73;
   position: relative;
   padding: 20px;
   border: 1px solid $color_main_gray;
-  box-shadow: 3px 3px $color_darker_gray;
+  box-shadow: 3px 3px 4px rgba(136, 136, 136, 0.4);
   margin: 4px;
   border-radius: 4px;
   animation: expand .5s ease-in-out;
