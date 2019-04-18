@@ -1,0 +1,137 @@
+$color_main_gray: #e4e9f0;
+$color_darker_gray: #888;
+$color_invalid_alert: #ff4a73;
+
+%clear-after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+@keyframes expand {
+  from {
+    transform: scale(0);
+    opacity: 0;
+    background: #5470B0;
+  }
+}
+
+.rules-block {
+  padding: 10px;
+}
+
+.rule-panel {
+  &:after {
+    @extend %clear-after;
+  }
+
+  position: relative;
+  padding: 20px;
+  border: 1px solid $color_main_gray;
+  box-shadow: 3px 3px $color_darker_gray;
+  margin: 4px;
+  border-radius: 4px;
+  animation: expand .5s ease-in-out;
+
+  .note-top {
+    color: #6c757d;
+  }
+}
+
+.row {
+  width: 100%;
+
+  &:after {
+    @extend %clear-after;
+  }
+}
+
+.alert-wrong {
+  padding: 0;
+  width: 100%;
+  background: $color_main_gray;
+  color: $color_invalid_alert;
+  transition: all .5s;
+  visibility: hidden;
+  opacity: 0;
+  height: 0;
+}
+
+.form-control {
+  width: 100%;
+  padding: 10px;
+  background: none;
+  border-radius: 4px;
+  outline: none;
+  border-style: solid;
+  box-shadow: none;
+  border-color: $color_main_gray;
+}
+
+
+.invalid {
+  .form-control {
+    border-color: $color_invalid_alert;
+  }
+  .alert-wrong {
+    opacity: 1;
+    visibility: visible;
+    height: 20px;
+    padding: 12px;
+  }
+}
+
+.col {
+  float: left;
+  padding-right: 15px;
+  padding-left: 15px;
+
+  &.col_1_3 {
+    width: 30%;
+  }
+
+  &.col_2_3 {
+    width: 60%;
+  }
+
+}
+
+.btn {
+  background: none;
+  padding: 8px;
+  font-size: 22px;
+  margin: 4px;
+  border: solid 1px $color_main_gray;
+
+  &:focus { outline: 0;}
+
+  &.btn-close {
+    position: absolute;
+    top: 3px;
+    right: 5px;
+    cursor: pointer;
+    border-radius: 40%;
+    width: 16px;
+    height: 16px;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 20px;
+    padding: 2px;
+    color: $color_darker_gray;
+
+    &:hover {
+      color: red;
+      border-color: red;
+    }
+  }
+
+  &.simple-gray {
+    border: solid 2px $color_main_gray;
+    border-radius: 3px;
+
+    &:hover {
+      background: $color_main_gray;
+    }
+  }
+
+}
